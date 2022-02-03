@@ -11,7 +11,7 @@ def downlaod_all_sites(sites):
             download_stie(url,session)
 
 if __name__ == '__main__':
-    sites=["https://www.naver.com"]*10
+    sites=["https://www.naver.com"]*100
     start_time = time.time()
     downlaod_all_sites(sites)
     duration = time.time()-start_time

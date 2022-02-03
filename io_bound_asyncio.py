@@ -17,7 +17,7 @@ async def download_all_sites(sites):
 if __name__ == "__main__":
     sites=[
         "https://naver.com"
-    ] *10
+    ] *100
     start_time =time.time()
     asyncio.get_event_loop().run_until_complete(download_all_sites(sites))
     duration = time.time() - start_time

@@ -19,7 +19,7 @@ def download_all_sites(sites):
         pool.map(download_site,sites)
 
 if __name__  == '__main__':
-    sites =['https://naver.com']*10
+    sites =['https://naver.com']*100
     start = time.time()
     download_all_sites(sites)
     duration = time.time() - start

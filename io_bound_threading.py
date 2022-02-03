@@ -16,14 +16,13 @@ def download_stie(url):
         print(f'Read {len(response.content)} from {url}')
 
 def downlaod_all_sites(sites):
-    with requests.Session() as session:
-        for url in sites:
-            download_stie(url)
+   with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+       executor.map(download_stie,sites)
 
 if __name__ == '__main__':
     sites=[
         "https://www.naver.com"
-    ]*10
+    ]*100
     start_time = time.time()
     downlaod_all_sites(sites)
     duration = time.time()-start_time
